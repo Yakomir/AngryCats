@@ -4,7 +4,10 @@ public class Cat
 {
     private String name;
     private int appetite;
-    public String eat_info;
+
+//    3. Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны).
+//    Если коту удалось покушать (хватило еды), сытость = true
+    private boolean isFull;
 
     public Cat (String name, int appetite)
     {
@@ -12,10 +15,25 @@ public class Cat
         this.appetite = appetite;
     }
 
+    private String eat_info;
     public void eatFrom (Plate plate)
     {
-        plate.decreaseFood(appetite);
+        if (plate.hasEnoughFood(appetite) && !isFull)
+        {
+            plate.decreaseFood(appetite);
+            isFull = true;
+            System.out.println(name + " покушал " + appetite);
+        }
+        else if (isFull)
+        {
+            System.out.println(name + " не голодный.");
+        }
+        else
+        {
+            System.out.println("Не хватило еды в мисочке для " + name);
+        }
     }
+
 
     public void eatInfo (Plate plate)
     {

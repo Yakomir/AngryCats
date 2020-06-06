@@ -21,7 +21,8 @@ public class Plate
             System.out.println("Не хватает еды в мисочке");
             return;
         }
-        food = food - appetite;
+        else
+            food = food - appetite;
     }
 
     public void autoFeederOn()

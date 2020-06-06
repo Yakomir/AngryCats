@@ -12,7 +12,7 @@ public class Main
 
         Cat all_cats [] = {cat1,cat2,cat3};
 
-        Plate plate = new Plate(25);
+        Plate plate = new Plate(15);
 
         plate.info();
         System.out.println();
@@ -20,7 +20,7 @@ public class Main
         for (int i = 0; i < all_cats.length; i++)
         {
             all_cats[i].eatFrom(plate);
-            all_cats[i].eatInfo(plate);
+//          all_cats[i].eatInfo(plate);
         }
 
         System.out.println();
